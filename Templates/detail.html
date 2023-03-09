@@ -1,0 +1,28 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{book.img.url}}" width="300" height="500">
+        </div>
+        <div class="col-md-6">
+            <h4><p style="color:crimson">{{book.name}}</p></h4>
+            <p style="color:wheat">{{book.desc}}</p>
+            <p style="color:wheat">{{book.year}}</p>
+            <a class="btn btn-warning" href="{% url 'GoodApp:update' book.id %}">UPDATE</a>
+            <a class="btn btn-warning" href="{% url 'GoodApp:submit' book.id %}" onclick="return confirm('Are you sure to delete?')">DELETE</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
